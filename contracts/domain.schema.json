@@ -19,20 +19,35 @@
     "event_type": {
       "type": "string",
       "enum": [
+        "PROFILE_REGISTERED",
+        "MEDICAL_SCOPE_RECORDED",
+        "MOVEMENT_ASSESSED",
         "PLAN_APPROVED",
+        "RULE_REGISTERED",
         "SESSION_RECORDED",
+        "ATTENDANCE_RECORDED",
+        "ABSENCE_RECORDED",
+        "LOAD_RECORDED",
+        "DEVICE_ANOMALY_FLAGGED",
+        "DEVICE_VALUE_CONFIRMED",
         "RISK_FLAGGED",
+        "HANDOFF_RECORDED",
         "ACTIVITY_PAUSED",
+        "REVIEW_SCHEDULED",
         "REVIEW_COMPLETED"
       ]
     },
     "aggregate_type": {
       "type": "string",
       "enum": [
+        "participant_profile",
         "participant_plan",
         "activity_session",
         "risk_observation",
-        "clinical_handoff"
+        "clinical_handoff",
+        "safety_rule",
+        "pause_decision",
+        "review_schedule"
       ]
     },
     "aggregate_id": {
@@ -50,6 +65,9 @@
     "summary": {
       "type": "string",
       "minLength": 1
+    },
+    "payload": {
+      "type": "object"
     }
   },
   "additionalProperties": true

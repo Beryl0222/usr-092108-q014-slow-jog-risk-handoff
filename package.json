@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "领域事件基础校验",
+  "description": "超慢跑风险接力服务：可解释状态评估、审核规则、负荷轨迹与角色视图",
   "scripts": {
     "test": "node --test"
   }

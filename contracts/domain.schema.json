@@ -19,10 +19,21 @@
     "event_type": {
       "type": "string",
       "enum": [
+        "PROFILE_REGISTERED",
+        "PHYSICIAN_SCOPE_RECORDED",
+        "MOVEMENT_ASSESSED",
         "PLAN_APPROVED",
         "SESSION_RECORDED",
+        "ATTENDANCE_RECORDED",
+        "LOAD_RECORDED",
+        "LOAD_CONFIRMED",
+        "FEEDBACK_RECORDED",
         "RISK_FLAGGED",
+        "DEVICE_READING_RESOLVED",
+        "TRIAGE_DECIDED",
         "ACTIVITY_PAUSED",
+        "HANDOFF_RECORDED",
+        "REVIEW_SCHEDULED",
         "REVIEW_COMPLETED"
       ]
     },
@@ -50,6 +61,15 @@
     "summary": {
       "type": "string",
       "minLength": 1
+    },
+    "supersedes": {
+      "type": "string",
+      "minLength": 1,
+      "description": "业务更正指向的被更正事件 event_id；更正不原地改写历史"
+    },
+    "payload": {
+      "type": "object",
+      "description": "各事件类型的业务载荷，由对应领域服务校验"
     }
   },
   "additionalProperties": true

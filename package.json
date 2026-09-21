@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "领域事件基础校验",
+  "description": "社区健康中心超慢跑风险接力服务：三态判定、负荷轨迹、异常处置与分角色视图",
   "scripts": {
     "test": "node --test"
   }

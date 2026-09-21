@@ -1,0 +1,34 @@
+{
+  "rule_set_id": "sj-triage-rules",
+  "version": 1,
+  "approved_by": "社区健康中心医学顾问组",
+  "approved_at": "2026-09-01T09:00:00+08:00",
+  "note": "规则仅用于提示咨询、降量或停止，帮助工作人员安排参与；不构成疾病诊断，也不修改任何治疗方案。",
+  "thresholds": {
+    "recent_injury_days": 30,
+    "scope_expiring_days": 14,
+    "heat_temperature_c": 32,
+    "heat_humid_temperature_c": 28,
+    "heat_humidity_pct": 80,
+    "rpe_reduce": 8,
+    "load_spike_ratio": 1.5,
+    "load_spike_min_history": 2,
+    "sedentary_observation_weeks": 4
+  },
+  "rules": [
+    { "id": "R-PAUSE-ACTIVE", "action": "STOP_ACTIVITY" },
+    { "id": "R-RED-FLAG-UNRESOLVED", "action": "STOP_ACTIVITY" },
+    { "id": "R-ACUTE-INJURY-RECENT", "action": "STOP_ACTIVITY" },
+    { "id": "R-NO-PLAN", "action": "STOP_ACTIVITY" },
+    { "id": "R-SCOPE-MISSING", "action": "STOP_ACTIVITY" },
+    { "id": "R-SCOPE-EXPIRED", "action": "STOP_ACTIVITY" },
+    { "id": "R-SCOPE-EXPIRING", "action": "ADVISE_CONSULT" },
+    { "id": "R-DEVICE-UNCONFIRMED", "action": "REDUCE_LOAD" },
+    { "id": "R-HEAT", "action": "REDUCE_LOAD" },
+    { "id": "R-RPE-HIGH", "action": "REDUCE_LOAD" },
+    { "id": "R-LOAD-SPIKE", "action": "REDUCE_LOAD" },
+    { "id": "R-MOVEMENT-CONCERN", "action": "REDUCE_LOAD" },
+    { "id": "R-SEDENTARY-START", "action": "REDUCE_LOAD" },
+    { "id": "R-OTHER-FLAG", "action": "REDUCE_LOAD" }
+  ]
+}
